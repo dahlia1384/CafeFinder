@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CafeFinder - Find your next study spot</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <div class="logo">CafeFinder</div>
+        <ul class="nav-links">
+          <li><a href="#explore">Explore</a></li>
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#insights">Insights</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+        </ul>
+        <button class="button ghost" type="button">Sign in</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="explore">
+        <div class="hero-content">
+          <span class="pill">OpenAI-powered cafe discovery</span>
+          <h1>Find the perfect cafe for focus, friends, and flavor.</h1>
+          <p>
+            CafeFinder curates Vancouver's best study-friendly cafes using live
+            reviews, vibe tags, and smart recommendations.
+          </p>
+          <form class="search" id="search-form">
+            <div class="input-group">
+              <label for="city">City</label>
+              <input id="city" name="city" type="text" value="Vancouver, BC" />
+            </div>
+            <div class="input-group">
+              <label for="vibe">Vibe</label>
+              <input
+                id="vibe"
+                name="vibe"
+                type="text"
+                placeholder="Cozy, bright, quiet"
+              />
+            </div>
+            <button class="button primary" type="submit">Search cafes</button>
+          </form>
+          <div class="hero-actions">
+            <button class="button dark" type="button" id="top-picks">
+              View top picks
+            </button>
+            <button class="button ghost" type="button" id="how-it-works">
+              How it works
+            </button>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <h3>250+</h3>
+              <span>Cafes indexed</span>
+            </div>
+            <div>
+              <h3>18</h3>
+              <span>Neighborhoods</span>
+            </div>
+            <div>
+              <h3>4.8</h3>
+              <span>Average rating</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="panel-card">
+            <div class="panel-header">
+              <div>
+                <h4>Next up</h4>
+                <p>Study-friendly picks</p>
+              </div>
+              <span class="badge">Live</span>
+            </div>
+            <div class="panel-items">
+              <article>
+                <div>
+                  <h5>Forestry Coffee Bar</h5>
+                  <p>Kitsilano · 4.9 · Quiet mornings</p>
+                </div>
+                <button class="icon-button" type="button" aria-label="Save cafe">
+                  ☆
+                </button>
+              </article>
+              <article>
+                <div>
+                  <h5>Paper Crane Cafe</h5>
+                  <p>Mount Pleasant · 4.7 · Natural light</p>
+                </div>
+                <button class="icon-button" type="button" aria-label="Save cafe">
+                  ☆
+                </button>
+              </article>
+              <article>
+                <div>
+                  <h5>Harbour Brew</h5>
+                  <p>Coal Harbour · 4.8 · Harbor view</p>
+                </div>
+                <button class="icon-button" type="button" aria-label="Save cafe">
+                  ☆
+                </button>
+              </article>
+            </div>
+            <div class="panel-footer">
+              <div>
+                <h6>Peak hours</h6>
+                <p>9:30 AM - 12:00 PM</p>
+              </div>
+              <button class="button ghost" type="button">See map</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="results" id="results">
+        <div class="section-header">
+          <div>
+            <h2>Live search results</h2>
+            <p>
+              <span id="results-count">0</span> cafes matched your search.
+            </p>
+          </div>
+          <div class="results-actions">
+            <span class="results-pill" id="active-filters">All vibes</span>
+            <button class="button ghost" type="button" id="reset-search">
+              Reset
+            </button>
+          </div>
+        </div>
+        <div class="results-grid" id="results-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="collections" id="collections">
+        <div class="section-header">
+          <div>
+            <h2>Curated collections</h2>
+            <p>Pick a mood and we will do the rest.</p>
+          </div>
+          <button class="button ghost" type="button">Browse all</button>
+        </div>
+        <div class="collection-grid">
+          <article class="collection">
+            <div class="collection-icon">☕</div>
+            <h3>Study sanctuaries</h3>
+            <p>Low music, plenty of outlets, and calm corners.</p>
+          </article>
+          <article class="collection">
+            <div class="collection-icon">🌿</div>
+            <h3>Nature lovers</h3>
+            <p>Sun-soaked patios and plant-filled interiors.</p>
+          </article>
+          <article class="collection">
+            <div class="collection-icon">🎶</div>
+            <h3>Creative energy</h3>
+            <p>Vibrant cafes with art walls and playlists.</p>
+          </article>
+          <article class="collection">
+            <div class="collection-icon">🧁</div>
+            <h3>Sweet treats</h3>
+            <p>Bakery-first cafes with the best pastry pairings.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="insights" id="insights">
+        <div class="insight-card">
+          <h2>Your cafe match in two taps.</h2>
+          <p>
+            We blend live reviews, OpenAI summaries, and cafe amenities to deliver
+            an instant match score. Save favorites and get alerts when seats
+            open up.
+          </p>
+          <ul>
+            <li>Live vibe tags updated every 30 minutes.</li>
+            <li>Noise-level predictions for each hour.</li>
+            <li>Personalized lists for group study or solo focus.</li>
+          </ul>
+          <button class="button primary" type="button">Try the demo</button>
+        </div>
+        <div class="insight-metrics">
+          <div>
+            <h3>92%</h3>
+            <p>Users found a new favorite cafe</p>
+          </div>
+          <div>
+            <h3>1.8k</h3>
+            <p>Weekly check-ins from Vancouver locals</p>
+          </div>
+          <div>
+            <h3>6 min</h3>
+            <p>Average time to find a seat</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter" id="newsletter">
+        <div>
+          <h2>Get the weekly cafe roundup</h2>
+          <p>
+            Subscribe for new openings, study deals, and curated cafe lists in
+            Vancouver.
+          </p>
+        </div>
+        <form class="newsletter-form" id="newsletter-form">
+          <input
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+          />
+          <button class="button dark" type="submit">Subscribe</button>
+        </form>
+        <span class="form-message" id="newsletter-message" role="status"></span>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <h3>CafeFinder</h3>
+        <p>Helping Vancouver find the perfect cafe to work, study, and chill.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#explore">Explore</a>
+        <a href="#collections">Collections</a>
+        <a href="#insights">Insights</a>
+        <a href="#newsletter">Newsletter</a>
+      </div>
+      <span>© 2024 CafeFinder</span>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
